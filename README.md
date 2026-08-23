@@ -7,7 +7,7 @@ email and Google Calendar.
 
 | | |
 |---|---|
-| **Live demo** | _add your deployed URL here_ |
+| **Live demo** | _add your deployed URL here_ · first load may take ~50s while the free Render instance wakes |
 | **API reference** | `/docs` (Swagger UI) · `/redoc` |
 | **Stack** | FastAPI · SQLAlchemy 2 · PostgreSQL/SQLite · vanilla ES-module frontend (no build step) |
 | **Tests** | 85 passing — `pytest -q` |
