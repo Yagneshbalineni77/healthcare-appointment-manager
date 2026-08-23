@@ -1,0 +1,28 @@
+# Secrets — never commit
+.env
+credentials/
+*.pem
+
+# Local database + generated artefacts
+*.db
+*.db-wal
+*.db-shm
+var/
+clinix.db*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

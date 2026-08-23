@@ -1,0 +1,15 @@
+# Clinix — Healthcare Appointment & Follow-up Manager
+# Deliberately minimal: no ORM extras, no task broker, no HTTP framework beyond FastAPI.
+# Google Calendar and Gemini are called over plain HTTPS with httpx rather than
+# pulling in the heavyweight vendor SDKs.
+
+fastapi==0.141.1              # API framework + automatic OpenAPI docs
+uvicorn[standard]==0.52.4     # ASGI server
+SQLAlchemy==2.0.52            # ORM (SQLite for dev, PostgreSQL for production)
+pydantic[email]==2.13.4       # request/response validation + email format checking
+python-dotenv==1.2.3          # .env loading
+httpx==0.28.1                 # HTTP client for Gemini, SendGrid and Google Calendar
+PyJWT==2.13.0                 # JWT access tokens and signed OAuth state
+bcrypt==5.0.0                 # password hashing
+python-multipart==0.0.32      # form parsing (required by FastAPI for form endpoints)
+psycopg[binary]==3.3.4        # PostgreSQL driver (production only; unused on SQLite)
