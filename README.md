@@ -7,7 +7,7 @@ email and Google Calendar.
 
 | | |
 |---|---|
-| **Live demo** | _add your deployed URL here_ · first load may take ~50s while the free Render instance wakes |
+| **Live demo** | **https://clinix-2xyl.onrender.com** · first load takes ~50s while the free Render instance wakes |
 | **API reference** | `/docs` (Swagger UI) · `/redoc` |
 | **Stack** | FastAPI · SQLAlchemy 2 · PostgreSQL/SQLite · vanilla ES-module frontend (no build step) |
 | **Tests** | 85 passing — `pytest -q` |
@@ -86,6 +86,14 @@ working system, not three empty portals.
 > credential to light up the corresponding integration — see [Configuration](#configuration).
 
 ---
+
+> **Note on email in the hosted demo.** Render's free tier blocks outbound SMTP
+> (ports 25/465/587), so the deployed instance cannot reach Gmail. Notifications are
+> therefore queued and retried rather than delivered — visible, with their error and
+> retry count, under **Admin → Operations**. This is the transactional-outbox design
+> behaving exactly as intended under a transport outage: nothing is lost, and setting
+> `SENDGRID_API_KEY` (an HTTPS API, which is not blocked) flushes the whole queue.
+> Email delivery is fully working when run locally over SMTP.
 
 ## Demo accounts
 
